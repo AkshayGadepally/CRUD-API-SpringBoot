@@ -88,10 +88,10 @@ You can test all the available API endpoints (CRUD operations) directly from the
 
 #  Author
 
-- Built with ❤️ by [Your Name]
+- Built with ❤️ by Akshay
 
 ---
 
-# 🚀
+
 
 

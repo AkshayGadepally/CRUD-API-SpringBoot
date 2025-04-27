@@ -1,106 +1,81 @@
-Student CRUD Application
+# Student CRUD Application
 
-This is a simple Spring Boot + PostgreSQL application that provides RESTful APIs to manage student records.
+This is a simple **Spring Boot + PostgreSQL** application that provides RESTful APIs to manage **student records**.
 
-Technologies Used
+---
 
-Java 21
+##  Technologies Used
 
-Spring Boot
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- PostgreSQL
+- Maven
 
-Spring Data JPA
+---
 
-PostgreSQL
+##  Features
 
-Maven
+- **Add Student** (POST)
+- **Get All Students** (GET)
+- **Get Student by Roll Number** (GET)
+- **Update Student Details** (PUT)
+- **Delete Student** (DELETE)
+- **Exception Handling** for invalid student roll numbers
 
- Features
+---
 
-Add Student (POST)
+##  How to Run
 
-Get All Students (GET)
+1. Clone the project.
+2. Set up your PostgreSQL database (create `studentdb`).
+3. Update your `application.properties` with your database credentials:
+    ```properties
+    spring.datasource.url=jdbc:postgresql://localhost:5432/studentdb
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+    spring.jpa.hibernate.ddl-auto=update
+    ```
+4. Run the application as a **Spring Boot App**.
+5. Access APIs via **Postman** or any REST client.
 
-Get Student by Roll Number (GET)
+---
 
-Update Student Details (PUT)
+##  API Endpoints
 
-Delete Student (DELETE)
+| Method | Endpoint | Description |
+|:------:|:--------:|:-----------:|
+| POST | `/students` | Add a new student |
+| GET | `/students` | Get all students |
+| GET | `/students/{rollno}` | Get student by roll number |
+| PUT | `/students/{rollno}` | Update student details |
+| DELETE | `/students/{rollno}` | Delete a student |
 
-Exception Handling for invalid student roll numbers
+---
 
- How to Run
+##  Example JSON for POST/PUT
 
-Clone the project.
-
-Set up your PostgreSQL database (create studentdb).
-
-Update your application.properties with your database credentials:
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/studentdb
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
-
-Run the application as a Spring Boot App.
-
-Access APIs via Postman or any REST client.
-
- API Endpoints
-
-Method
-
-Endpoint
-
-Description
-
-POST
-
-/students
-
-Add a new student
-
-GET
-
-/students
-
-Get all students
-
-GET
-
-/students/{rollno}
-
-Get student by roll number
-
-PUT
-
-/students/{rollno}
-
-Update student details
-
-DELETE
-
-/students/{rollno}
-
-Delete a student
-
- Example JSON for POST/PUT
-
+```json
 {
     "rollno": 1,
     "name": "John Doe",
     "grade": "A"
 }
+```
 
- Exception Handling Example
+---
+
+##  Exception Handling Example
 
 If you try to access a roll number that doesn't exist, you will receive:
 
+```json
 {
     "message": "Student Not Found",
     "status": 404
 }
-
- API Documentation (Swagger / OpenAPI)
+```
+## API Documentation (Swagger / OpenAPI)
 
 This project provides interactive API documentation using Swagger UI.
 
@@ -109,7 +84,14 @@ This project provides interactive API documentation using Swagger UI.
 
 You can test all the available API endpoints (CRUD operations) directly from the Swagger UI.
 
+---
 
- Author
+#  Author
 
-Built with ❤️ by Akshay
+- Built with ❤️ by [Your Name]
+
+---
+
+# 🚀
+
+

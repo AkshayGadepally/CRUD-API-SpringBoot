@@ -1,4 +1,4 @@
-package StudentConfig;
+package com.CRUD.student_crud.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,8 @@ public class GlobalConfig {
 		public WebMvcConfigurer corsConfigurer() {
 			return new WebMvcConfigurer() {
 				
-				public void addCorsMapping(CorsRegistry registry) {
+				@Override
+				public void addCorsMappings(CorsRegistry registry) {
 					registry.addMapping("/**")
 							.allowedOrigins("*")
 							.allowedMethods("PUT","GET","POST","DELETE","OPTIONS")

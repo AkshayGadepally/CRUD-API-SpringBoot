@@ -55,7 +55,13 @@ public class StudentService {
 	
 	//Delete Student
 	public void deleteStudent(Integer rollno) {
-		studentRepository.deleteById(rollno);
+	    Optional<Student> student = studentRepository.findByRollno(rollno);
+	    if (student.isPresent()) {
+	        studentRepository.delete(student.get());
+	    } else {
+	        throw new StudentNotFoundException("Student with roll number " + rollno + " not found");
+	    }
+	
 	}
 		
 }
